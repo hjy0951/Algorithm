@@ -7,7 +7,8 @@
 using namespace std;
 
 int map[9][9];
-vector<int> v[9];
+vector<int> v[9]; // 각 행 별로 부족한 숫자를 담아둘 벡터
+// => 이를 통해 다른 코드보다 속도를 조금이나마 줄일 수 있었던 것 같다.
 vector<pair<int, int> > p;
 int cnt;
 
@@ -62,7 +63,7 @@ void bt(int c) {
 		int cx = p[c].second;
 
 		for (int i = 0; i < v[cy].size(); i++) {
-			int cur = v[cy][i];
+			int cur = v[cy][i];// 부족한 숫자가 들어있는 벡터에서 숫자를 넣어보면서 DFS
 
 			if ((check1(cy, cur) && check2(cx, cur) && check3(cy, cx, cur)) == true) {
 				map[cy][cx] = cur;
