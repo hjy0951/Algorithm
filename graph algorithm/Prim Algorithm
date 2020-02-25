@@ -1,0 +1,17 @@
+Prim Algorithm
+
+Prim Algorithm
+- 시작 Node로부터 출발하여 spanning tree를 확장해 나감
+
+동작
+1. 처음에는 시작 node만 MST에 포함
+2. MST에 인접한 node들 중 가장 작은 cost의 edge로 연결된 node를 선택하고 MST 확장
+ - 이미 MST 안에 포함된 node를 선택할 경우, cycle이 생기므로 reject
+3. 2를 반복
+4. edge 수가 N-1 개가 될 때까지 반복 (모든 node가 포함될 때까지)
+
+시간 복잡도
+ - Prim의 알고리즘의 시간 복잡도는 항상 O(n^2)
+
+따라서 그래프 내에 적은 숫자의 간선만을 가지는 ‘희소 그래프(Sparse Graph)’의 경우 Kruskal 알고리즘이 적합하고
+그래프에 간선이 많이 존재하는 ‘밀집 그래프(Dense Graph)’ 의 경우는 Prim 알고리즘이 적합하다

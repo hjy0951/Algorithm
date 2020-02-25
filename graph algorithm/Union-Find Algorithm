@@ -1,0 +1,44 @@
+Union-Find Algorithm
+
+Disjoint set
+- 서로 중복되지 않는 부분 집합들로 나누어진 원소들에 대한 정보를 저장 및 조작하는 자료구조
+- 서로소 집합
+
+Union-Find
+- Disjoint set을 표현하기 위한 알고리즘
+- 구현 시, 벡터, 배열, 링크드 리스트를 이용할 수 있지만, 트리 구조가 가장 효율적
+
+1. 초기화
+ - i번째 원소가 i의 값을 갖도록 함 (arr[i] = i)
+ - 시간 복잡도는 O(N)
+2. Union
+ - 두 원소의 대표 node를 찾고 다르면 합침
+ - 시간 복잡도는 find하는 시간의 두 배인 2*logN이므로 O(logN) / 하지만 최악의 경우, O(N-1)
+  = find 하는 시간이 거의 모든 시간을 차지함
+3. Find
+ - 현재 node가 속한 집합의 대표 Node를 찾음
+ - 시간 복잡도는 트리의 depth와 같음 (최악의 경우, O(N-1))
+
+*사용 예시
+- 일반적으로 두 원소가 하나의 집합 안에 포함되어 있는지를 확인할 때 사용
+- Kruskal Algorithm에서 cycle을 찾는데 사용됨
+
+1. Find code
+
+int find(int x){
+    if(x == arr[x]){
+        return x;
+    }
+    else find(arr[x]);
+} 
+
+2. Union code
+
+void union(int x, int y){
+    x = find(x);
+    y = find(y);
+
+    if(x != y){
+        arr[x] = y;
+    }
+}

@@ -1,4 +1,4 @@
-// No.1152
+// 백준 1152
 // strtok 사용법 익히기
 
 #include <cstdio>

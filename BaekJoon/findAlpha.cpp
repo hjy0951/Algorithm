@@ -1,4 +1,4 @@
-// No.10809
+// 백준 10809
 #include <iostream>
 #include <cstdio>
 #include <cstring>

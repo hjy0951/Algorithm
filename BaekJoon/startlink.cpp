@@ -1,4 +1,4 @@
-// No.14889 스타트와 링크
+// 백준 14889 스타트와 링크
 #include <iostream>
 
 using namespace std;
