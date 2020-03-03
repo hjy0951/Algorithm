@@ -122,7 +122,7 @@ int main(){
         if(cnt >= 2) break; // 두 부분으로 나뉘어지는 경우
         if(cnt == 0){ // 빙산이 두 부분으로 나뉘지 않고 한번에 다 녹을 경우 0을 출력
             cout << "0\n";
-            return;
+            return 0;
         }
 
         melt();
