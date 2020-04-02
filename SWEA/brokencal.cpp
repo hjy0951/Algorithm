@@ -1,4 +1,8 @@
 // SWEA 1808 지희의 고장난 계산기
+/*
+    고장나지 않은 계산기의 숫자들로 처음에 목표 숫자보다 작은 가능한 모든 조합들을 큐에 넣고 bfs를 실행하였다.
+    그리고 이 조합들을 따로 벡터에 저장하여 bfs를 통해 탐색할 때 이용하였다.
+*/
 #include <iostream>
 #include <vector>
 #include <cstring>
@@ -6,12 +10,12 @@
 
 using namespace std;
 
-vector<int> button;
-vector<int> ps;
-vector<int> pos;
-int num[1000001];
+vector<int> button; // 고장나지 않은 버튼
+vector<int> ps; // 버튼으로 조합을 만들기 위해 사용
+vector<int> pos; // 고장나지 않은 버튼으로 가능한 목표 숫자보다 작은 조합들.
+int num[1000001]; // 방문했던 숫자인지 판별하기 위함.
 int x;
-int digit;
+int digit; // 목표 숫자의 자리 수
 queue<int> q;
 
 void rec(int cnt){
