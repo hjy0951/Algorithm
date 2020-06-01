@@ -90,7 +90,7 @@ void bfs(){
                     // 서류 도착
                     else if(map[ny][nx] == '$'){
                         visit[ny][nx] = true;
-                        q.push(ny,nx);
+                        q.push(make_pair(ny,nx));
                         cnt++;
                     }
                 }
@@ -138,7 +138,7 @@ int main(){
 
         bfs();
         cout << cnt << '\n';
-        print();
+        // print();
         
         memset(visit,0,sizeof(visit));
         memset(key,0,sizeof(key));
